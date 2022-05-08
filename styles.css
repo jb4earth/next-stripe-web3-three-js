@@ -195,7 +195,7 @@ button:disabled {
   cursor: not-allowed;
 }
 form{
-  min-width: min(100vw,325px) ;
+  min-width: min(100vw,400px) ;
 }
 .elements-style {
   color: var(--elements-color);

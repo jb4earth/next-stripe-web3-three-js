@@ -24,13 +24,13 @@ const Products = () => {
               addItem(product)
             }}
           >
-            Add to cart
+            +
           </button>
           <button
             className="cart-style-background"
             onClick={() => removeItem(product.id)}
           >
-            Remove
+            -
           </button>
         </div>
       ))}

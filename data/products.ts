@@ -1,12 +1,12 @@
 const product = [
   {
-    name: 'NFT',
-    description: 'Yummy yellow fruit',
-    id: 'sku_GBJ2Ep8246qeeT',
+    name: 'ArchiDAO NFT',
+    description: 'ArchiDAO Wearable',
+    id: '0x0',
     price: 9000,
     image:
-      '/nft_.png',
-    attribution: 'Photo by Priscilla Du Preez on Unsplash',
+      'https://ipfs.io/ipfs/QmPYAPNFB373TrM9TJN59RDuZgSpUDW9qvqBktaSS4vDEH?filename=nft_.png',
+    attribution: 'Photo by Archidao.io',
     currency: 'USD',
   },
 

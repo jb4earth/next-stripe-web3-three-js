@@ -1,6 +1,9 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Boxes from './Boxes'
+
+
 
 type Props = {
   children: ReactNode
@@ -12,6 +15,8 @@ const Layout = ({
   title = 'ArchiDAO',
 }: Props) => (
   <>
+  <div className="backdrop"><Boxes /></div>
+
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -28,6 +33,7 @@ const Layout = ({
         content="https://nextjs-typescript-react-stripe-js.vercel.app/social_card.png"
       />
     </Head>
+
     <div className="container">
       <header>
         <div className="header-content">
@@ -37,9 +43,11 @@ const Layout = ({
             </a>
           </Link>
         </div>
+
       </header>
       {children}
     </div>
+
     <div className="banner">
       <span>
         {' View code on '}
@@ -52,6 +60,7 @@ const Layout = ({
         </a>
         .
       </span>
+
     </div>
   </>
 )

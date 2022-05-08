@@ -9,9 +9,7 @@ import { ConnectWallet } from '../components/ConnectWallet';
 const DonatePage: NextPage = () => {
   return (
     <Layout title="Shopping Cart | Next.js + TypeScript Example">
-    <div>
-      <ConnectWallet />
-    </div>
+
       <div className="page-container">
         <h1>BUY NFT</h1>
         <p>
@@ -19,7 +17,11 @@ const DonatePage: NextPage = () => {
         </p>
         <Cart>
           <Products />
+          <div>
+            <ConnectWallet />
+          </div>
           <CartSummary />
+
         </Cart>
       </div>
     </Layout>

@@ -21,7 +21,8 @@
     "stripe": "8.200.0",
     "swr": "^0.1.16",
     "three": "^0.140.0",
-    "use-shopping-cart": "3.0.5"
+    "use-shopping-cart": "3.0.5",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "@types/micro": "^7.3.3",

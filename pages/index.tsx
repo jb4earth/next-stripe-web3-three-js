@@ -1,13 +1,15 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import Boxes from '../components/Boxes'
 
 const IndexPage: NextPage = () => {
   return (
     <Layout title="ArchiDAO">
+    <Boxes />
       <ul className="card-list">
         <li>
-          <Link href="/use-shopping-cart">
+          <Link href="/shop">
             <a className="card cart-style-background">
               <h2 className="bottom">Buy NFT</h2>
               <img src="/nft_.png" />

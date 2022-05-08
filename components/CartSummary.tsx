@@ -1,24 +1,29 @@
 import React, { useState, useEffect } from 'react'
-
+import {
+  useNetwork,
+  useAddress,
+} from '@thirdweb-dev/react';
+import Web3 from 'web3';
 import StripeTestCards from '../components/StripeTestCards'
 
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { fetchPostJSON } from '../utils/api-helpers'
 
 const CartSummary = () => {
+  const address = useAddress();
   const [loading, setLoading] = useState(false)
   const [cartEmpty, setCartEmpty] = useState(true)
   const [errorMessage, setErrorMessage] = useState('')
   const {
-    formattedTotalPrice,
-    cartCount,
-    clearCart,
-    cartDetails,
-    redirectToCheckout,
-  } = useShoppingCart()
+          formattedTotalPrice,
+          cartCount,
+          clearCart,
+          cartDetails,
+          redirectToCheckout,
+        } = useShoppingCart()
 
   useEffect(() => setCartEmpty(!cartCount), [cartCount])
-
+  let result = Web3.utils.isAddress(address)
   const handleCheckout: React.FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
@@ -60,7 +65,7 @@ const CartSummary = () => {
       <button
         className="cart-style-background"
         type="submit"
-        disabled={cartEmpty || loading}
+        disabled={cartEmpty || loading || !result }
       >
         Checkout
       </button>

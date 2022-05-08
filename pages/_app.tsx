@@ -6,7 +6,7 @@ import { ThirdwebProvider } from '@thirdweb-dev/react';
 
 import '../styles.css'
 
-function MyApp({ Componentx, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const desiredChainId = 80001;
 
   /**
@@ -15,7 +15,7 @@ function MyApp({ Componentx, pageProps }: AppProps) {
    */
   return (
     <ThirdwebProvider desiredChainId={desiredChainId}>
-      <Componentx {...pageProps} />
+      <Component {...pageProps} />
     </ThirdwebProvider>
   );
 }

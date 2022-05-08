@@ -14,8 +14,17 @@
   --page-width-max: 600px;
   --transition-duration: 2s;
 }
-canvas{
-  z-index: -1;
+/* canvas{
+  position: absolute;
+  z-index: 99 !important;
+  left: 0;
+  top: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+} */
+.backdrop{
+  position: absolute;
+  z-index: 0;
   width: 100vw !important;
   height: 100vh !important;
 }
@@ -43,6 +52,7 @@ body {
   padding: 45px 25px;
   display: flex;
   flex-direction: row;
+  z-index: 99;
 }
 
 .page-container {
@@ -120,6 +130,7 @@ li {
   margin: 0 20px 20px 0;
   text-decoration: none;
   box-shadow: 0 0 160px #abffad, 0 0 60px #00ff50;
+    z-index: 99;
 }
 .card h2 {
   color: #fff;
@@ -172,6 +183,11 @@ button {
   transition: all 0.2s ease;
   display: block;
   width: 100%;
+  z-index: 99;
+  color: var(--h3-color);
+  border: 1px solid var(--elements-color);
+  background: var(--elements-color);
+  transition: box-shadow var(--transition-duration);
 }
 button:disabled {
   opacity: 0.5;
@@ -211,16 +227,17 @@ button:disabled {
 /* Products */
 .products {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  /* grid-template-columns: repeat(2, 1fr); */
   margin-top: 3rem;
 }
 
 .product img {
-  max-width: 100%;
-  border-radius: 20px;
+  /* max-width: 100%; */
+  width: 100%;
+  border-radius: 40px;
   box-shadow: 0 0 60px #50ff80, 0 0 40px #00ffff;
-  margin: 60px;
+  /* margin: 60px; */
 }
 
 /* Test card number */

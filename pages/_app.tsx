@@ -8,7 +8,6 @@ import '../styles.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const desiredChainId = 80001;
-  if (typeof global.navigator === 'undefined') global.navigator = {};
    /* Make sure that your app is wrazpped with these contexts.
    * If you're using React, you'll have to replace the Component setup with {children}
    */

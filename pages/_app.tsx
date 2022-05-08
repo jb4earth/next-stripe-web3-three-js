@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <ThirdwebProvider desiredChainId={desiredChainId}>
+      {/* @ts-ignore */}
       <Component {...pageProps} />
     </ThirdwebProvider>
     </>

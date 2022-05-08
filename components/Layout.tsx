@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Boxes from './Boxes'
+import Canvas3 from './Canvas3'
 
 
 
@@ -15,7 +15,7 @@ const Layout = ({
   title = 'ArchiDAO',
 }: Props) => (
   <>
-  <div className="backdrop"><Boxes /></div>
+  <div className="backdrop"><Canvas3 /></div>
 
     <Head>
       <title>{title}</title>

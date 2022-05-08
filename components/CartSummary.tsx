@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import {
   useNetwork,
   useAddress,
@@ -8,11 +8,9 @@ import StripeTestCards from '../components/StripeTestCards'
 
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { fetchPostJSON } from '../utils/api-helpers'
-
 const CartSummary = () => {
-  const address = useAddress();
   const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState(true)
   const [cartEmpty, setCartEmpty] = useState(true)
   const [errorMessage, setErrorMessage] = useState('')
   const {
@@ -24,7 +22,7 @@ const CartSummary = () => {
         } = useShoppingCart()
 
   useEffect(() => setCartEmpty(!cartCount), [cartCount])
-  useEffect(() => setResult(Web3.utils.isAddress(address)))
+  // useEffect(() => setResult(!cartCount), [cartCount])
 
   const handleCheckout: React.FormEventHandler<HTMLFormElement> = async (
     event
@@ -47,9 +45,9 @@ const CartSummary = () => {
 
     redirectToCheckout({ sessionId: response.id })
   }
-
+  if (useAddress()) {
   return (
-    <form onSubmit={handleCheckout}>
+    <form className='cart' onSubmit={handleCheckout}>
       <h2>Cart summary</h2>
       {errorMessage ? (
         <p style={{ color: 'red' }}>Error: {errorMessage}</p>
@@ -63,11 +61,10 @@ const CartSummary = () => {
       </p>
 
       {/* Redirects the user to Stripe */}
-      <StripeTestCards />
       <button
         className="cart-style-background"
         type="submit"
-        disabled={cartEmpty || loading || !result }
+        disabled={cartEmpty || loading }
       >
         Checkout
       </button>
@@ -79,7 +76,32 @@ const CartSummary = () => {
         Clear Cart
       </button>
     </form>
-  )
+  )}
+  else {
+    return (
+      <form onSubmit={handleCheckout}>
+        <h2>Cart summary</h2>
+        {errorMessage ? (
+          <p style={{ color: 'red' }}>Error: {errorMessage}</p>
+        ) : null}
+        {/* This is where we'll render our cart */}
+        <p suppressHydrationWarning>
+          <strong>Number of Items:</strong> {cartCount}
+        </p>
+        <p suppressHydrationWarning>
+          <strong>Total:</strong> {formattedTotalPrice}
+        </p>
+
+        <button
+          className="cart-style-background"
+          type="button"
+          onClick={clearCart}
+        >
+          Clear Cart
+        </button>
+      </form>
+    )
+  }
 }
 
 export default CartSummary

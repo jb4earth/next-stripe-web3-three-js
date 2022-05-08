@@ -14,9 +14,11 @@ function MyApp({ Component, pageProps }: AppProps) {
    * If you're using React, you'll have to replace the Component setup with {children}
    */
   return (
+    <>
     <ThirdwebProvider desiredChainId={desiredChainId}>
-      <Component {...pageProps} />
+      <MyApp {...pageProps} />
     </ThirdwebProvider>
+    </>
   );
 }
 

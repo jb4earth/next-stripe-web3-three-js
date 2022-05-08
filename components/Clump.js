@@ -11,8 +11,8 @@ const rfs = THREE.MathUtils.randFloatSpread
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32)
 const baubleMaterial = new THREE.MeshStandardMaterial({ color: "red", roughness: 0, envMapIntensity: 0.2, emissive: "#370037" })
 
- export const App = () => {
-  <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 20], fov: 35, near: 1, far: 40 }}>
+ export const Appx = () => {
+return(  <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 20], fov: 35, near: 1, far: 40 }}>
     <ambientLight intensity={0.25} />
     <spotLight intensity={1} angle={0.2} penumbra={1} position={[30, 30, 30]} castShadow shadow-mapSize={[512, 512]} />
     <directionalLight intensity={5} position={[-10, -10, -10]} color="purple" />
@@ -22,7 +22,7 @@ const baubleMaterial = new THREE.MeshStandardMaterial({ color: "red", roughness:
     </Physics>
     <Effects />
     <Sky />
-  </Canvas>
+  </Canvas>)
 }
 
 function Clump({ mat = new THREE.Matrix4(), vec = new THREE.Vector3(), ...props }) {

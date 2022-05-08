@@ -12,6 +12,7 @@ import { fetchPostJSON } from '../utils/api-helpers'
 const CartSummary = () => {
   const address = useAddress();
   const [loading, setLoading] = useState(false)
+  const [result, setResult] = useState('')
   const [cartEmpty, setCartEmpty] = useState(true)
   const [errorMessage, setErrorMessage] = useState('')
   const {
@@ -23,7 +24,8 @@ const CartSummary = () => {
         } = useShoppingCart()
 
   useEffect(() => setCartEmpty(!cartCount), [cartCount])
-  let result = Web3.utils.isAddress(address)
+  useEffect(() => setResult(Web3.utils.isAddress(address)))
+
   const handleCheckout: React.FormEventHandler<HTMLFormElement> = async (
     event
   ) => {

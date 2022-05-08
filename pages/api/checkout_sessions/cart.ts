@@ -34,7 +34,7 @@ export default async function handler(
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         line_items,
-        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/thanks`,
         cancel_url: `${req.headers.origin}/shop`,
         mode: hasSubscription ? 'subscription' : 'payment',
       }

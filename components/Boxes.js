@@ -5,25 +5,12 @@ import Box from './Box'
 const Boxes = () => {
   return (
       <Canvas camera={{ position: [0, 0, 35] }}>
-       <fog attach="fog" args={['#cc7b32', 16, 20]} />
+       <fog attach="fog" args={['#505050', 0, 100]} />
         <ambientLight intensity={7} />
         <pointLight position={[40, 40, 40]} />
         <Box position={[10, 0, 0]} />
-        <Box position={[-10, 0, 0]} />
-        <Box position={[0, 10, 0]} />
-        <Box position={[0, -10, 0]} />
-        <sphereGeometry args={[1, 32]} />
+
         <OrbitControls />
-        <mesh visible userData={{ test: "hello" }} position={[-5, -5, 5]} castShadow>
-          <sphereGeometry attach="geometry" args={[20, 30,30]} />
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            transparent
-            roughness={0.1}
-            metalness={0.1}
-          />
-        </mesh>
       </Canvas>
   )
 }

@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <ThirdwebProvider desiredChainId={desiredChainId}>
-      <MyApp {...pageProps} />
+      <Component {...pageProps} />
     </ThirdwebProvider>
     </>
   );

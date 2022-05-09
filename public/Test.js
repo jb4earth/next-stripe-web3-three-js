@@ -10,8 +10,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF('/test.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.Plane.geometry} material={nodes.Plane.material} position={[0, -1.32, 0]} scale={10000} />
-      <mesh geometry={nodes.Torus.geometry} material={materials['Material.002']} position={[0.21, 2.4, -1.48]} rotation={[2.42, 1.03, -0.02]} scale={1.26} />
+      <mesh geometry={nodes.BezierCurve.geometry} material={nodes.BezierCurve.material} position={[-5.95, 2.27, 0.44]} rotation={[Math.PI / 2, 0, 0]} scale={1.55} />
     </group>
   )
 }

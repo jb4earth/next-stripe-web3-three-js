@@ -7,7 +7,7 @@ import LightBulb from "./LightBulb";
 import Floor from "./Floor";
 import Draggable from "./Draggable";
 import {Suspense} from "react";
-import Test from './Test.js'
+import Test from '../public/Test.js'
 import React from "react";
 
 function MyRotatingBox() {

@@ -23,7 +23,7 @@
   height: 100vh !important;
 } */
 .backdrop{
-  position: absolute;
+  position: fixed;
   z-index: 0;
   width: 100vw !important;
   height: 100vh !important;

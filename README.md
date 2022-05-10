@@ -11,3 +11,5 @@ In progress:
 Help wanted: 
 - CSS fixes
 - Three JS updates
+
+License: MIT

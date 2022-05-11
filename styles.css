@@ -22,6 +22,19 @@
   width: 100vw !important;
   height: 100vh !important;
 } */
+
+.header-content {
+  position: fixed;
+  border-radius: 0 0 50px 0;
+  left: 0;
+  top: 0;
+  color: white;
+  padding: 10px;
+  background: var(--body-color);
+  opacity: 90%;
+
+}
+
 .backdrop{
   position: fixed;
   z-index: 0;
@@ -50,9 +63,10 @@ body {
 .container {
   max-width: var(--container-width-max);
   padding: 45px 25px;
-  display: flex;
+  display: absolute;
   flex-direction: row;
   z-index: 99;
+  padding-top: 12vh;
 }
 
 .page-container {
@@ -88,20 +102,19 @@ a {
   text-decoration: none;
 }
 
-header {
-  position: relative;
-  flex: 0 0 250px;
-  padding-right: 48px;
-}
 
-.header-content {
-  position: sticky;
-  top: 45px;
-}
+
 
 .logo img {
-  height: 60px;
-  margin-bottom: 52px;
+  height: 80px;
+  margin: 5px;
+}
+.logox{
+  color: black;
+  font-size: 40px;
+  line-height: 40px;
+  padding: 40px ;
+  color: white;
 }
 
 ul,
@@ -302,13 +315,10 @@ pre {
 @media only screen and (max-width: 980px) {
   .container {
     flex-direction: column;
+    padding-top: 12vh;
   }
 
-  .header-content {
-    max-width: 280px;
-    position: relative;
-    top: 0;
-  }
+
 
   .card {
     margin: 0 20px 20px 0;
@@ -316,7 +326,7 @@ pre {
   }
 
   .card-list {
-    padding-top: 0;
+    padding-top: 12vh;
   }
 
   .banner {
@@ -328,6 +338,7 @@ pre {
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
+    padding-top: 12vh;
   }
 
   .card {
@@ -342,7 +353,7 @@ pre {
   }
 
   .card-list {
-    padding-top: 0;
+    padding-top: 12vh;
   }
 
   code,

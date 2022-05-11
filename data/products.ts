@@ -9,6 +9,5 @@ const product = [
     attribution: 'Photo by Archidao.io',
     currency: 'USD',
   },
-
 ]
 export default product

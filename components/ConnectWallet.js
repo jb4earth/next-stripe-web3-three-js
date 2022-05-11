@@ -6,7 +6,8 @@ import {
   useAddress,
   useDisconnect,
 } from '@thirdweb-dev/react';
-
+import { AddressContext } from "../contexts/Address"
+import React from "react"
 export const ConnectWallet = () => {
   const connectWithCoinbaseWallet = useCoinbaseWallet();
   const connectWithMetamask = useMetamask();
@@ -15,11 +16,18 @@ export const ConnectWallet = () => {
   const address = useAddress();
   const network = useNetwork();
 
+
+
+    const [ state, dispatch ] = React.useContext(AddressContext)
+    state.address = address
+    console.log(state.address)
+    console.log('CW.js')
+
   // If a wallet is connected, show address, chainId and disconnect button
-  if (address) {
+  if (state.address) {
     return (
       <div>
-        Address: {address}
+        Address: {state.address}
         <br />
         Chain ID: {network[0].data.chain && network[0].data.chain.id}
         <br />

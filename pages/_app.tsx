@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import { ThirdwebProvider } from '@thirdweb-dev/react';
-
+import { AddressProvider } from "../contexts/Address"
 
 
 
@@ -13,10 +13,12 @@ function MyApp({ Component, pageProps }: AppProps) {
    */
   return (
     <>
+    <AddressProvider>
     <ThirdwebProvider desiredChainId={desiredChainId}>
       {/* @ts-ignore */}
       <Component {...pageProps} />
     </ThirdwebProvider>
+    </AddressProvider>
     </>
   );
 }

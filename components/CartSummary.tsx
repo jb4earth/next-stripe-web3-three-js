@@ -6,6 +6,8 @@ import {
 import Web3 from 'web3';
 import StripeTestCards from '../components/StripeTestCards'
 
+import { AddressContext } from "../contexts/Address"
+
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { fetchPostJSON } from '../utils/api-helpers'
 const CartSummary = () => {
@@ -24,12 +26,22 @@ const CartSummary = () => {
   useEffect(() => setCartEmpty(!cartCount), [cartCount])
   // useEffect(() => setResult(!cartCount), [cartCount])
 
+  const [ state, dispatch ] = React.useContext(AddressContext)
+
+  console.log(state.address)
+  console.log('cartsumm.jsx')
+
+
   const handleCheckout: React.FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
     event.preventDefault()
     setLoading(true)
     setErrorMessage('')
+
+    console.log(state.address)
+    console.log('got hrere')
+
 
     const response = await fetchPostJSON(
       '/api/checkout_sessions/cart',
@@ -45,7 +57,7 @@ const CartSummary = () => {
 
     redirectToCheckout({ sessionId: response.id })
   }
-  if (useAddress()) {
+  if (state.address) {
   return (
     <form className='cart' onSubmit={handleCheckout}>
       <h2>Cart summary</h2>
@@ -77,7 +89,7 @@ const CartSummary = () => {
       </button>
     </form>
   )}
-  else {
+  else { console.log(state.address)
     return (
       <form onSubmit={handleCheckout}>
         <h2>Cart summary</h2>

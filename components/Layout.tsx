@@ -43,17 +43,12 @@ const Layout = ({
       <header>
         <div className="header-content">
           <Link href="/">
-            <a className="logo">
+            <a className="header-logo">
               <img src="/archidao.png" />
             </a>
           </Link>
           <Link href="/faq">
-            <a className="logo">
-              ArchiDAO.io
-            </a>
-          </Link>
-          <Link href="/faq">
-            <a className="logo">
+            <a className="header-logo">
               FAQ
             </a>
           </Link>
@@ -67,7 +62,7 @@ const Layout = ({
 
     <div className="banner">
       <span>
-         Chat with us on&nbsp;
+
          <a
            href="https://github.com/archiDAO"
            target="_blank"
@@ -75,7 +70,7 @@ const Layout = ({
          >
             Discord&nbsp;<FontAwesomeIcon icon={['fab', 'discord']} />
          </a>
-         {' or view our code on '}
+         &nbsp;&nbsp;
          <a
            href="https://github.com/archiDAO"
            target="_blank"

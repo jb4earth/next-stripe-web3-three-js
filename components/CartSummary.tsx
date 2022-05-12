@@ -81,15 +81,14 @@ const CartSummary = () => {
           type="submit"
           disabled={cartEmpty || !state.active }
         >
-          Checkout
+          Pay with Card
         </button>
         <button
           className="shop-button cart-style-background"
-          type="button"
-          onClick={clearCart}
-            disabled={cartEmpty || !state.active }
+
+          disabled={true }
         >
-          Clear Cart
+          (coming soon) Pay with Crypto
         </button>
       </form>
     )}else{return(<h1>please connect wallet</h1>)}

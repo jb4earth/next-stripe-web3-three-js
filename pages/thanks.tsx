@@ -8,7 +8,7 @@ import { CWload } from '../components/CWload';
 import { setDoc,doc,collection } from '@firebase/firestore';
 
 import { useState } from 'react';
-import { firestore } from './firebase/client';
+import { firestore } from '../components/firebase/client';
 
 import React from "react"
 import { AddressContext } from "../contexts/Address"

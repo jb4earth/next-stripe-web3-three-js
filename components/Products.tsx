@@ -1,15 +1,31 @@
 import products from '../data/products'
 import { formatCurrencyString } from 'use-shopping-cart'
 import { useShoppingCart } from 'use-shopping-cart/react'
+import { CWload } from '../components/CWload';
 
 const Products = () => {
   const { addItem, removeItem } = useShoppingCart()
-
+  const address = CWload()
+  if (!address) {return (    <section className="products">
+        {products.map((product) => (
+          <div key={product.id} className="product">
+            <img src={product.image} className='nftimage' alt={product.name} />
+            <h2>{product.name}</h2>
+            <p className="price">
+              {formatCurrencyString({
+                value: product.price,
+                currency: product.currency,
+              })}
+            </p>
+          </div>
+        ))}
+      </section>)
+  } else{
   return (
     <section className="products">
       {products.map((product) => (
         <div key={product.id} className="product">
-          <img src={product.image} alt={product.name} />
+          <img src={product.image} className='nftimage' alt={product.name} />
           <h2>{product.name}</h2>
           <p className="price">
             {formatCurrencyString({
@@ -18,24 +34,26 @@ const Products = () => {
             })}
           </p>
           <button
-            className="cart-style-background"
+            className="shop-button cart-style-background"
             onClick={() => {
               console.log(product)
               addItem(product)
             }}
+            disabled={!address}
           >
             +
           </button>
           <button
-            className="cart-style-background"
+            className="shop-button cart-style-background"
             onClick={() => removeItem(product.id)}
+            disabled={!address}
           >
             -
           </button>
         </div>
       ))}
     </section>
-  )
+  )}
 }
 
 export default Products

@@ -12,5 +12,6 @@ export const reducer = (state, action) => {
 }
 
 export const initialState = {
-  active: false
+  active: 'init',
+  address: 'init',
 }

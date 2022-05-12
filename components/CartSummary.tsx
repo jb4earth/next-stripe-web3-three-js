@@ -5,7 +5,7 @@ import {
 } from '@thirdweb-dev/react';
 import Web3 from 'web3';
 import StripeTestCards from '../components/StripeTestCards'
-
+import { CWload } from '../components/CWload';
 import { AddressContext } from "../contexts/Address"
 
 import { useShoppingCart } from 'use-shopping-cart/react'
@@ -27,7 +27,7 @@ const CartSummary = () => {
   // useEffect(() => setResult(!cartCount), [cartCount])
 
   const [ state, dispatch ] = React.useContext(AddressContext)
-
+  console.log(state)
   console.log(state.address)
   console.log('cartsumm.jsx')
 
@@ -57,41 +57,13 @@ const CartSummary = () => {
 
     redirectToCheckout({ sessionId: response.id })
   }
-  if (state.address) {
-  return (
-    <form className='cart' onSubmit={handleCheckout}>
-      <h2>Cart summary</h2>
-      {errorMessage ? (
-        <p style={{ color: 'red' }}>Error: {errorMessage}</p>
-      ) : null}
-      {/* This is where we'll render our cart */}
-      <p suppressHydrationWarning>
-        <strong>Number of Items:</strong> {cartCount}
-      </p>
-      <p suppressHydrationWarning>
-        <strong>Total:</strong> {formattedTotalPrice}
-      </p>
-
-      {/* Redirects the user to Stripe */}
-      <button
-        className="cart-style-background"
-        type="submit"
-        disabled={cartEmpty || loading }
-      >
-        Checkout
-      </button>
-      <button
-        className="cart-style-background"
-        type="button"
-        onClick={clearCart}
-      >
-        Clear Cart
-      </button>
-    </form>
-  )}
-  else { console.log(state.address)
-    return (
-      <form onSubmit={handleCheckout}>
+  console.log(state)
+  console.log(state.active)
+  console.log('CS pre retren')
+  console.log(cartEmpty)
+  if (CWload()){  return (
+      <form className='cart' onSubmit={handleCheckout}>
+        <CWload/>
         <h2>Cart summary</h2>
         {errorMessage ? (
           <p style={{ color: 'red' }}>Error: {errorMessage}</p>
@@ -103,17 +75,25 @@ const CartSummary = () => {
         <p suppressHydrationWarning>
           <strong>Total:</strong> {formattedTotalPrice}
         </p>
-
+        {/* Redirects the user to Stripe */}
         <button
-          className="cart-style-background"
+          className="shop-button cart-style-background"
+          type="submit"
+          disabled={cartEmpty || !state.active }
+        >
+          Checkout
+        </button>
+        <button
+          className="shop-button cart-style-background"
           type="button"
           onClick={clearCart}
+            disabled={cartEmpty || !state.active }
         >
           Clear Cart
         </button>
       </form>
-    )
-  }
+    )}else{return(<h1>please connect wallet</h1>)}
+
 }
 
 export default CartSummary

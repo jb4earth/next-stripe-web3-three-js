@@ -1,19 +1,17 @@
-//https://www.thisdot.co/blog/creating-a-global-state-with-react-hooks
-
 import React from "react"
 import { reducer, initialState } from "./reducer"
 
-export const AddressContext = React.createContext({
+export const UserContext = React.createContext({
   state: initialState,
   dispatch: () => null
 })
 
-export const AddressProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   return (
-    <AddressContext.Provider value={[ state, dispatch ]}>
+    <UserContext.Provider value={[ state, dispatch ]}>
     	{ children }
-    </AddressContext.Provider>
+    </UserContext.Provider>
   )
 }

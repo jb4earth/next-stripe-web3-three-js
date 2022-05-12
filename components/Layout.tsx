@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode,useContext } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -6,7 +6,8 @@ import Canvas3 from './Canvas3'
 import { fab,faTwitter,faDiscord,faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {  } from '@fortawesome/fontawesome-free-solid'
-
+import { ConnectWallet } from '../components/ConnectWallet';
+import { AddressContext } from "../contexts/Address"
 
 library.add(faTwitter,faDiscord,faGithub);
 type Props = {
@@ -45,13 +46,19 @@ const Layout = ({
             <a className="logo">
               <img src="/archidao.png" />
             </a>
-          </Link> 
-          <Link href="/shop">
-            <a className="logox">
-              shop
+          </Link>
+          <Link href="/faq">
+            <a className="logo">
+              ArchiDAO.io
+            </a>
+          </Link>
+          <Link href="/faq">
+            <a className="logo">
+              FAQ
             </a>
           </Link>
 
+          <ConnectWallet />
         </div>
 
       </header>

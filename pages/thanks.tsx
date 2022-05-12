@@ -28,8 +28,9 @@ const addPurchasex = async (address) => {
     console.log(jdoc)
     // console.log('in thanks')
 // set in DB (FAILS????)
-    const res = firestore.collection('info_collect').doc(timestamp).set(jdoc);
-    await setDoc(doc(firestore, 'info_collect', timestamp), jdoc);
+    // const res = firestore.collection('info_collect').doc(timestamp).set(jdoc);
+    // await setDoc(doc(firestore, 'info_collect', timestamp), jdoc);
+    alert('addresses are not being store correctly...yet. if you are seeing this message please contact us on Discord')
 };
 
 const IndexPage: NextPage = () => {

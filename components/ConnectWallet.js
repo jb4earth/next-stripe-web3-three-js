@@ -40,7 +40,7 @@ export const ConnectWallet = () => {
     state.active = true
     return (
       <>
-        <button class="cw-button" onClick={() =>disconnectWalletX(state)}>Disconnect</button>
+        <button className="cw-button" onClick={() =>disconnectWalletX(state)}>Disconnect</button>
       </>
     );
   }
@@ -48,11 +48,11 @@ export const ConnectWallet = () => {
   // If no wallet is connected, show connect wallet options
   return (
     <>
-      <button class="cw-button" onClick={() => connectWithCoinbaseWallet()}>
+      <button className="cw-button" onClick={() => connectWithCoinbaseWallet()}>
         Coinbase Wallet
       </button>
-      <button class="cw-button" onClick={() => connectWithMetamask()}>MetaMask</button>
-      <button class="cw-button" onClick={() => connectWithWalletConnect()}>
+      <button className="cw-button" onClick={() => connectWithMetamask()}>MetaMask</button>
+      <button className="cw-button" onClick={() => connectWithWalletConnect()}>
         WalletConnect
       </button>
     </>

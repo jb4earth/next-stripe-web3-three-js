@@ -7,7 +7,7 @@ import Web3 from 'web3';
 import StripeTestCards from '../components/StripeTestCards'
 import { CWload } from '../components/CWload';
 import { AddressContext } from "../contexts/Address"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { fetchPostJSON } from '../utils/api-helpers'
 const CartSummary = () => {
@@ -85,7 +85,7 @@ const CartSummary = () => {
           type="submit"
           disabled={cartEmpty || !state.active }
         >
-          Check Out (Card)
+          Check Out (<FontAwesomeIcon icon={['fab', 'stripe']} />)
         </button>
         <button
           className="shop-button cart-button cart-button-mid cart-style-background"

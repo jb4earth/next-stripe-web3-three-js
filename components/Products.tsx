@@ -4,12 +4,46 @@ import { useShoppingCart } from 'use-shopping-cart/react'
 import { CWload } from '../components/CWload';
 // import {FontAwesomeIcon} from fortawesome;
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+// library.add(fab, faCheckSquare, faCoffee)
+// // this babel macros brings in a module called moduled and next doesnt like that (which makes sense because using a built in name is a bad idea)
+// import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import React, { useState, useEffect, useCallback } from 'react'
+
 
 const Products = () => {
-  const { addItem, removeItem } = useShoppingCart()
+  const { addItem, removeItem, incrementItem, decrementItem,cartCount } = useShoppingCart()
+  const [minusOn, setMinus] = useState(false)
+  const [plusOn, setPlus] = useState(true)
   const address = CWload('Products.tsx')
-  if (!address) {return (    <section className="products">
+  // try{decrementItem(product.id)}
+  const minusAction = (product) => {
+
+     if (cartCount > 1) {
+      decrementItem(product.id)
+    } else {  setMinus(false)}
+     checkButtons(cartCount)
+
+  }
+
+  const plusAction = (product) => {
+    console.log(product)
+    if (cartCount < 10) {
+    addItem(product)
+    } else { setPlus(false) }
+    checkButtons(cartCount)
+  }
+
+  const checkButtons = (count) => {
+    console.log(count)
+    if (count > 1 ) {setMinus(true)}
+    if (count < 10 ) {setPlus(true)}
+  }
+
+  if (!address) {return (
+    <section className="products">
         {products.map((product) => (
           <div key={product.id} className="product">
             <img src={product.image} className='nftimage' alt={product.name} />
@@ -38,10 +72,10 @@ const Products = () => {
           </h2>
           <button
             className="shop-button change-count-button  subtract-button cart-style-background"
-            onClick={() => removeItem(product.id)}
-            disabled={!address}
+            onClick={() => minusAction(product)}
+            disabled={!address || !(cartCount > 1)}
           >
-            - <FontAwesomeIcon icon={brands('stripe')} />
+            -
           </button>
           <button
             className="shop-button  change-count-button add-button cart-style-background"
@@ -49,11 +83,10 @@ const Products = () => {
               console.log(product)
               addItem(product)
             }}
-            disabled={!address}
+            disabled={!address || !(cartCount < 10) }
           >
             +
           </button>
-
         </div>
       ))}
     </section>

@@ -82,7 +82,8 @@ font-size: min(2vw,20px);
   position: relative;
   float: right;
   padding: 1vw;
-  right: 1vw;
+  right: 5px;
+  top: 5px;
   margin: .25vw;
   line-height: min(3vw,20px);
 }

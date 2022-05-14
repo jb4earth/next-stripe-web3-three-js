@@ -3,6 +3,14 @@ import { ThirdwebProvider } from '@thirdweb-dev/react';
 import { AddressProvider } from "../contexts/Address"
 import { Web3Provider } from "../contexts/web3"
 
+import ReactDOM from 'react-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee)
+
+
 
 import '../styles.css'
 

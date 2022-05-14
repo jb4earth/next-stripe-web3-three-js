@@ -42,6 +42,7 @@ body {
   --h1-color: #ff1fff;
   --h2-color: #ff81ff;
   --h3-color: #ffacff;
+  --href-color: #20ffff;
   --radius: 6px;
   --container-width-max: 1280px;
   --page-width-max: 600px;
@@ -70,6 +71,23 @@ body {
   opacity: 90%;
 font-family: 'Major Mono Display', monospace;
 font-size: min(2vw,20px);
+}
+.faq-item{
+  display: block;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #909090;
+  color: white!important;
+  width: 100%;
+  max-width: 65vh;
+  margin: 0 20px 20px 0;
+  font-weight:  bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #abffad, 0 0 5px #00ff50;
+    z-index: 99;
+  padding: 10px;
+  line-height: normal!important;
 }
 .cw-button{
   border-style: solid;
@@ -102,9 +120,29 @@ body {
 }
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-family: 'Bungee Hairline', cursive;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.faq-div{
+  width: 100%;
+  /* background-color: red; */
+  display: block;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #909090;
+  color: white!important;
+  width: 100%;
+  max-width: 65vh;
+  margin: 0 20px 20px 0;
+  font-weight:  bold;
+  text-decoration: none;
+  background-color: #00000090;
+  box-shadow: 0 0 20px #abffad, 0 0 10px #00ff50;
+    z-index: 99;
+  padding: 10px;
+  line-height: normal!important;
 }
 .shop-info {
   margin: 20px;
@@ -222,6 +260,11 @@ h3 {
   font-size: 17px;
   color: var(--h3-color);
   margin: 8px 0;
+}
+
+.faq-a {
+  color: var(--href-color);
+  text-decoration: underline;
 }
 
 a {
@@ -532,6 +575,10 @@ pre {
     box-shadow: none;
     bottom: 0;
   }
+  .faq-div {
+  width: 100vw;
+  margin: 10px
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -543,14 +590,17 @@ pre {
   .card {
     display: block;
     border-radius: 8px;
-    flex: 1 0 100%;
-    max-width: 100%;
+    /* flex: 0 0 100%; */
+    /* max-width: 100%; */
     padding-left: 0;
     padding-right: 0;
     margin: 0 0 20px 0;
     box-shadow: none;
   }
 
+.faq-div {
+width: 100vw;
+}
   .card-list {
     padding-top: 12vh;
   }

@@ -1,18 +1,23 @@
-const { initializeApp,cert } = require('firebase-admin/app');
-const { getFirestore } = require('firebase-admin/firestore');
-const serviceAccount = require('./serviceAccountKey.json');
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "@firebase/app";
+import { getFirestore } from "@firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-try{
-  initializeApp( {
-   apiKey:process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-   authDomain:process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-   projectId:process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-});
-}catch{console.log('app already initiallized')}
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDbbgvth9u0l4zE390Ko1WAYd9Fs5gsjDQ",
+  authDomain: "archidao.firebaseapp.com",
+  projectId: "archidao",
+  storageBucket: "archidao.appspot.com",
+  messagingSenderId: "1064854491749",
+  appId: "1:1064854491749:web:cf5efaebe7555167532c8c",
+  measurementId: "G-4JFQ60YZP3"
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
-const firestore = getFirestore();
-try {firestore.settings({ ignoreUndefinedProperties: true})}
-catch {''}
-
-export {firestore};
+export {firestore}

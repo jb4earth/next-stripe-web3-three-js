@@ -35,7 +35,7 @@ const Layout = ({
       />
       <meta
         name="twitter:image"
-        content="https://ipfs.io/ipfs/QmPYAPNFB373TrM9TJN59RDuZgSpUDW9qvqBktaSS4vDEH?filename=nft_.png"
+        content="https://ipfs.io/ipfs/Qmb7k3AUhnNsjoak459vh8Z3RC1qdLx7J5ucFUPn6b7E44?filename=preview.png"
       />
     </Head>
 

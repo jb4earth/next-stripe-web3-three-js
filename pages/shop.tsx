@@ -11,8 +11,6 @@ const DonatePage: NextPage = () => {
     <Layout title="Shopping Cart | Next.js + TypeScript Example">
 
       <div className="nft-container">
-        <h1>BUY NFT</h1>
-
         <Cart>
           <Products />
           <CartSummary />

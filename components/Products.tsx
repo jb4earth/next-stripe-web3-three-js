@@ -26,15 +26,22 @@ const Products = () => {
       {products.map((product) => (
         <div key={product.id} className="product">
           <img src={product.image} className='nftimage' alt={product.name} />
-          <h2>{product.name}</h2>
-          <p className="price">
+          <h1>{product.name}</h1>
+          <h2 className="price">
             {formatCurrencyString({
               value: product.price,
               currency: product.currency,
             })}
-          </p>
+          </h2>
           <button
-            className="shop-button cart-style-background"
+            className="shop-button change-count-button  subtract-button cart-style-background"
+            onClick={() => removeItem(product.id)}
+            disabled={!address}
+          >
+            -
+          </button>
+          <button
+            className="shop-button  change-count-button add-button cart-style-background"
             onClick={() => {
               console.log(product)
               addItem(product)
@@ -43,13 +50,7 @@ const Products = () => {
           >
             +
           </button>
-          <button
-            className="shop-button cart-style-background"
-            onClick={() => removeItem(product.id)}
-            disabled={!address}
-          >
-            -
-          </button>
+
         </div>
       ))}
     </section>

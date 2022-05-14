@@ -39,10 +39,14 @@ export default async function handler(
         mode: hasSubscription ? 'subscription' : 'payment',
       }
 
+      // checkoutSession should hold the transaction ID after success!!!
       const checkoutSession: Stripe.Checkout.Session =
         await stripe.checkout.sessions.create(params)
 
       res.status(200).json(checkoutSession)
+      // add the ID somewhere now!
+      // perhaps to Redis?
+      console.log(checkoutSession.id)
     } catch (err) {
       console.log(err)
       const errorMessage =

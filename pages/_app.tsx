@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { ThirdwebProvider } from '@thirdweb-dev/react';
 import { AddressProvider } from "../contexts/Address"
-
+import { Web3Provider } from "../contexts/web3"
 
 
 import '../styles.css'
@@ -13,12 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
    */
   return (
     <>
+    <Web3Provider>
     <AddressProvider>
     <ThirdwebProvider desiredChainId={desiredChainId}>
       {/* @ts-ignore */}
       <Component {...pageProps} />
     </ThirdwebProvider>
     </AddressProvider>
+    </Web3Provider>
     </>
   );
 }

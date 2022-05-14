@@ -63,36 +63,55 @@ const CartSummary = () => {
   console.log(cartEmpty)
   if (CWload()){  return (
       <form className='cart' onSubmit={handleCheckout}>
-        <CWload/>
-        <h2>Cart summary</h2>
         {errorMessage ? (
           <p style={{ color: 'red' }}>Error: {errorMessage}</p>
         ) : null}
         {/* This is where we'll render our cart */}
-        <p suppressHydrationWarning>
-          <strong>Number of Items:</strong> {cartCount}
-        </p>
-        <p suppressHydrationWarning>
-          <strong>Total:</strong> {formattedTotalPrice}
-        </p>
+
         {/* Redirects the user to Stripe */}
+        <div className='shop-sum-div'>
+        <div className = "shop-info-div">
+        <p className = 'shop-info' suppressHydrationWarning>
+          <strong>Quantity: {cartCount}</strong>
+        </p>
+        <br/>
+        <p className = 'shop-info' suppressHydrationWarning>
+          <strong>Totals: {formattedTotalPrice}</strong>
+        </p>
+        </div>
+        <div className = "shop-button-div">
         <button
-          className="shop-button cart-style-background"
+          className="shop-button cart-button cart-button-top cart-style-background"
           type="submit"
           disabled={cartEmpty || !state.active }
         >
-          Pay with Card
+          Pay (Card)
         </button>
-        <button
-          className="shop-button cart-style-background"
 
-          disabled={true }
+        <button
+          className="shop-button clear-cart-background cart-button cart-button-bot cart-style-background"
+          type="button"
+          onClick={clearCart}
+            disabled={cartEmpty || !state.active }
         >
-          (coming soon) Pay with Crypto
+          Clear Cart
         </button>
+        </div>
+
+
+        </div>
       </form>
     )}else{return(<h1>please connect wallet</h1>)}
 
 }
 
 export default CartSummary
+
+
+// <button
+//   className="shop-button cart-button cart-button-mid cart-style-background"
+//   type="submit"
+//   disabled={true }
+// >
+//   Pay (Crypto)
+// </button>

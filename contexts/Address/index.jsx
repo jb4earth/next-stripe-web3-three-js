@@ -1,16 +1,13 @@
-import React from "react"
+import React, {useState, createContext} from "react"
 import { reducer, initialState } from "./reducer"
 
-export const AddressContext = React.createContext({
-  state: initialState,
-  dispatch: () => null
-})
+export const AddressContext = createContext()
 
 export const AddressProvider = ({ children }) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState)
+  const [state, setState] = useState(initialState)
 
   return (
-    <AddressContext.Provider value={[ state, dispatch ]}>
+    <AddressContext.Provider value={[ state, setState ]}>
     	{ children }
     </AddressContext.Provider>
   )

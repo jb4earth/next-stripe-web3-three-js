@@ -8,9 +8,8 @@ const IndexPage: NextPage = () => {
       <ul className="card-list">
         <li>
           <Link href="/shop">
-            <a className="card cart-style-background">
+            <a className="card2 cart-style-background">
               <h2 className="bottom">Buy NFT</h2>
-              <img src="/nft_.png" />
             </a>
           </Link>
         </li>

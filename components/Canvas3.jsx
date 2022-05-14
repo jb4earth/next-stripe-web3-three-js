@@ -7,7 +7,7 @@ import LightBulb from "./LightBulb";
 import Floor from "./Floor";
 import Draggable from "./Draggable";
 import {Suspense} from "react";
-import Test from '../public/Test.js'
+import Model from '../public/Archidao_wearable.js'
 import React from "react";
 
 function MyRotatingBox() {
@@ -21,12 +21,21 @@ function MyRotatingBox() {
   return (
     <mesh ref={myMesh}>
     <Suspense fallback={null}>
-      <Test/>
+      <Model/>
     </Suspense>
     </mesh>
   );
 }
-
+const light_info = [
+  {position: [3,3,0],color:'red',intensity:1},
+  {position: [0,3,3],color:'purple',intensity:1},
+  {position: [3,3,3],color:'white',intensity:1},
+  {position: [0,3,0],color:'blue',intensity:1},
+  {position: [-3,3,3],color:'red',intensity:1},
+  {position: [3,3,-3],color:'purple',intensity:1},
+  {position: [-3,3,-3],color:'white',intensity:1},
+  {position: [3,3,3],color:'blue',intensity:1},
+]
 export default function Canvas3() {
     return (
     <div className={css.scene}>
@@ -34,30 +43,15 @@ export default function Canvas3() {
         shadows={true}
         className={css.canvas}
         camera={{
-          position: [-6, 7, 7],
+          position: [-6, 9, 12],
         }}
       >
+      {light_info.map((lightx) => (      <mesh  position={lightx.position}>
+              <pointLight castShadow color={lightx.color} intensity={lightx.intensity}  />
+              <sphereBufferGeometry args={[.0, 10, 10]} />
+              <meshPhongMaterial emissive={"white"} />
+            </mesh>))}
 
-      <mesh  position={[0, 3, 0]}>
-        <pointLight castShadow color={"red"} intensity={0.21}  />
-        <sphereBufferGeometry args={[.0, 10, 10]} />
-        <meshPhongMaterial emissive={"white"} />
-      </mesh>
-      <mesh  position={[3, 6, 3]}>
-        <pointLight castShadow color={"blue"} intensity={0.21}  />
-        <sphereBufferGeometry args={[.0, 10, 10]} />
-        <meshPhongMaterial emissive={"white"} />
-      </mesh>
-      <mesh  position={[1,1,1]}>
-        <pointLight castShadow color={"white"} intensity={0.1}  />
-        <sphereBufferGeometry args={[.0, 10, 10]} />
-        <meshPhongMaterial emissive={"white"} />
-      </mesh>
-      <mesh  position={[6, 9, 6]}>
-        <pointLight castShadow color={"purple"} intensity={0.31}  />
-        <sphereBufferGeometry args={[.0, 10, 10]} />
-        <meshPhongMaterial emissive={"white"} />
-      </mesh>
 
         <OrbitControls />
 

@@ -337,6 +337,25 @@ li {
   box-shadow: 0 0 160px #abffad, 0 0 60px #00ff50;
     z-index: 99;
 }
+.card2 {
+  display: block;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #909090;
+  position: relative;
+  /* padding: 12px; */
+  /* height: min(400px,100vw);
+  width: min(400px, 100vw); */
+  flex: 0 0 33%;
+  /* min-width: 304px; */
+  /* width: 33%; */
+  margin: 20px;
+  padding: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 160px #abffad, 0 0 60px #00ff50;
+    z-index: 99;
+}
 .card h2 {
   color: #fff;
   margin: 10px;

@@ -19,9 +19,9 @@ function MyRotatingBox() {
   });
 
   return (
-    <mesh ref={myMesh}>
+    <mesh ref={myMesh} position={[-2, 0, 4]}>
     <Suspense fallback={null}>
-      <Model/>
+      <Model position={[0, -1, 0]} />
     </Suspense>
     </mesh>
   );
@@ -35,6 +35,10 @@ const light_info = [
   {position: [3,3,-3],color:'purple',intensity:1},
   {position: [-3,3,-3],color:'white',intensity:1},
   {position: [3,3,3],color:'blue',intensity:1},
+  {position: [-10,6,-3],color:'red',intensity:1},
+  {position: [-3,6,3],color:'purple',intensity:1},
+  {position: [9,6,9],color:'white',intensity:1},
+  {position: [-10,6,-10],color:'blue',intensity:1},
 ]
 export default function Canvas3() {
     return (
@@ -43,7 +47,7 @@ export default function Canvas3() {
         shadows={true}
         className={css.canvas}
         camera={{
-          position: [-6, 9, 12],
+          position: [1, 6, 12],
         }}
       >
       {light_info.map((lightx) => (      <mesh  position={lightx.position}>

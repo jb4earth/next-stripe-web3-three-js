@@ -61,7 +61,7 @@ const CartSummary = () => {
   console.log(state.active)
   console.log('CS pre retren')
   console.log(cartEmpty)
-  if (CWload()){  return (
+  if (CWload('CartSummary.tsx')){  return (
       <form className='cart' onSubmit={handleCheckout}>
         {errorMessage ? (
           <p style={{ color: 'red' }}>Error: {errorMessage}</p>
@@ -85,9 +85,15 @@ const CartSummary = () => {
           type="submit"
           disabled={cartEmpty || !state.active }
         >
-          Pay (Card)
+          Check Out (Card)
         </button>
-
+        <button
+          className="shop-button cart-button cart-button-mid cart-style-background"
+          type="submit"
+          disabled={true }
+        >
+          <s>Check Out (Crypto)</s>
+        </button>
         <button
           className="shop-button clear-cart-background cart-button cart-button-bot cart-style-background"
           type="button"
@@ -106,12 +112,3 @@ const CartSummary = () => {
 }
 
 export default CartSummary
-
-
-// <button
-//   className="shop-button cart-button cart-button-mid cart-style-background"
-//   type="submit"
-//   disabled={true }
-// >
-//   Pay (Crypto)
-// </button>

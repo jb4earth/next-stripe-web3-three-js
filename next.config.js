@@ -19,6 +19,7 @@ config.resolve.fallback = {
   fs: false, // the solution
   os: false,
   child_process: false,
+  module: "empty",
 };
 
 return config;

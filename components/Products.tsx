@@ -2,10 +2,13 @@ import products from '../data/products'
 import { formatCurrencyString } from 'use-shopping-cart'
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { CWload } from '../components/CWload';
+// import {FontAwesomeIcon} from fortawesome;
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Products = () => {
   const { addItem, removeItem } = useShoppingCart()
-  const address = CWload()
+  const address = CWload('Products.tsx')
   if (!address) {return (    <section className="products">
         {products.map((product) => (
           <div key={product.id} className="product">
@@ -38,7 +41,7 @@ const Products = () => {
             onClick={() => removeItem(product.id)}
             disabled={!address}
           >
-            -
+            - <FontAwesomeIcon icon={brands('stripe')} />
           </button>
           <button
             className="shop-button  change-count-button add-button cart-style-background"

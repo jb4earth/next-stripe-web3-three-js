@@ -135,7 +135,13 @@ margin-right: 5%;
 margin-top: 0;
 margin-bottom: 0;
 }
-
+html {
+  overflow:   scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 .cart-button-top{
   border-radius: 10px 10px 0 0!important;
 }
@@ -432,7 +438,7 @@ form{
 
   /* margin: 30px; */
   border-radius: 20px;
-  box-shadow: 0 0 60px #50ff80, 0 0 40px #00ffff;
+  box-shadow: 0 0 40px #50ff80, 0 0 20px #00ffff;
   text-align: center;
   align-items: center;
 

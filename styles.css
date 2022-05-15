@@ -76,7 +76,7 @@ font-size: min(2vw,20px);
   display: block;
   border-style: solid;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
   color: white!important;
   width: 100%;
@@ -91,7 +91,7 @@ font-size: min(2vw,20px);
 }
 .cw-button{
   border-style: solid;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #90ff90;
   width: auto;
   /* height: 6vw; */
@@ -130,7 +130,7 @@ body {
   display: block;
   border-style: solid;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
   color: white!important;
   width: 100%;
@@ -283,7 +283,7 @@ a {
   background: #00000090;
   border-radius: 20px;
   border-style: solid;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
 }
 
@@ -321,7 +321,7 @@ li {
   display: block;
   border-style: solid;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
   position: relative;
   /* padding: 12px; */
@@ -339,7 +339,7 @@ li {
   display: block;
   border-style: solid;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
   position: relative;
   /* padding: 12px; */
@@ -504,23 +504,24 @@ form{
   /* margin: 60px; */
 }
 .whitelist-div {
-  display: block;
+  display: flex;
 
   background: #00000090;
   border-style: solid;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1.25px;
   border-color: #909090;
   color: white!important;
   width: 100%;
   /* max-width: 65vh; */
-  margin: 0 20px 20px 0;
+  /* margin: 0 20px 20px 0; */
+  margin: 10px;
+  padding: 10px;
   font-weight:  bold;
   text-decoration: none;
   box-shadow: 0 0 10px #abffad, 0 0 5px #00ff50;
     z-index: 99;
-  padding: 10px;
-  margin-top: 100px;
+  margin-top: min(15vh,100px);
   line-height: normal!important;
 }
 .product{
@@ -588,6 +589,22 @@ pre {
   justify-content: right;
   z-index: 99;
 }
+.whitelist-submit{
+  width: auto;
+  right: 10px;
+  margin: 10px!important;
+  padding: 10px!important;
+  position: relative;
+  display: block;
+  font-size: 1rem!important;
+}
+.whitelist-form{
+  width: 100%;
+}
+.whitelist-input{
+  width: 80%!important;
+  margin: 10px!important;
+}
 
 @media only screen and (max-width: 980px) {
   .container {
@@ -635,6 +652,9 @@ pre {
 
 .faq-div {
 width: 100vw;
+}
+.whitelist-div{
+  width: 100vw;
 }
   .card-list {
     padding-top: 12vh;

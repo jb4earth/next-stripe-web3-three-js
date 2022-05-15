@@ -47,6 +47,9 @@ const IndexPage: NextPage = () => {
             whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email))  }).catch(()=>{ setDoc(doc(firestore, "crypto_logins", String(address)), {
             whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email)) });})
 
+    updateDoc(doc(firestore, "whitelist", String(address)), {
+            whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email))  }).catch(()=>{ setDoc(doc(firestore, "crypto_logins", String(address)), {
+            whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email)) });})
 
     window.location.href = "/";
   // Send the form data to our forms API on Vercel and get a response.
@@ -54,9 +57,9 @@ const IndexPage: NextPage = () => {
 if (address) {  return (
     <Layout title="ArchiDAO">
     <div className="whitelist-div">
-    <form onSubmit={handleSubmit}>
-      <input type="text" id="email" placeholder="email" name="email" value={values.email} onChange={handleEmailInputChange} required />
-      <button type="submit">Submit</button>
+    <form className="whitelist-form" onSubmit={handleSubmit}>
+      <input type="text" className="whitelist-input" id="email" placeholder="email" name="email" value={values.email} onChange={handleEmailInputChange} required />
+      <button className="whitelist-submit" type="submit">send</button>
     </form>
     </div>
     </Layout>

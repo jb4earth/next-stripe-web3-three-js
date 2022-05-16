@@ -42,16 +42,18 @@ const IndexPage: NextPage = () => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
     const timestamp = Date.now().toString();
-
-    updateDoc(doc(firestore, "crypto_logins", String(address)), {
+    console.log(address)
+    console.log(timestamp)
+    await updateDoc(doc(firestore, "whitelist", String(address)), {
+            email: (String(values.email))  }).catch(()=>{ setDoc(doc(firestore, "whitelist", String(address)), {
+            email: (String(values.email)) });})
+    await updateDoc(doc(firestore, "crypto_logins", String(address)), {
             whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email))  }).catch(()=>{ setDoc(doc(firestore, "crypto_logins", String(address)), {
-            whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email)) });})
+            whitelist: (String(timestamp)), email: (String(values.email)) });})
 
-    updateDoc(doc(firestore, "whitelist", String(address)), {
-            whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email))  }).catch(()=>{ setDoc(doc(firestore, "crypto_logins", String(address)), {
-            whitelist: arrayUnion(String(timestamp)), email: arrayUnion(String(values.email)) });})
 
-    window.location.href = "/";
+
+    window.location.href = "/whitelist-thanks";
   // Send the form data to our forms API on Vercel and get a response.
 }
 if (address) {  return (

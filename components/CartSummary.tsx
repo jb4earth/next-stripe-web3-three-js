@@ -83,7 +83,7 @@ const CartSummary = () => {
         <button
           className="shop-button cart-button cart-button-top cart-style-background"
           type="submit"
-          disabled={true}
+          disabled={false}
         >
           <s>Check Out (Bank) <FontAwesomeIcon icon={['fab', 'stripe']} /></s>
         </button>

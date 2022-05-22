@@ -7,7 +7,7 @@ const IndexPage: NextPage = () => {
     <Layout title="ArchiDAO">
       <ul className="card-list">
         <li>
-          <Link href="/whitelist">
+          <Link href="/shop">
             <a className="card2 cart-style-background">
               <h2 className="bottom">Join the whitelist</h2>
             </a>

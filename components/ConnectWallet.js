@@ -8,6 +8,7 @@ import {
 } from '@thirdweb-dev/react';
 import { AddressContext } from "../contexts/Address"
 import React from "react"
+import cookieCutter from 'cookie-cutter'
 // import {store, useGlobalState} from 'state-pool';
 //
 // store.setState("user",{address: '', transaction: '', active:''});
@@ -34,7 +35,7 @@ export const ConnectWallet = () => {
     //   user.address = state.address
     //   })
     // console.log(user.address)
-    // console.log(state.address)
+    // console.log(state.ad dress)
     // console.log('CW first.js')
 
 
@@ -71,6 +72,7 @@ export const ConnectWallet = () => {
   // If a wallet is connected, show address, chainId and disconnect button
   if (hold_address) {
     walletConnected()
+    cookieCutter.set('Current_Address', hold_address)
     return (
       <>
         <button className="cw-button" onClick={() =>disconnectWalletX()}>{String(hold_address).slice(0,5)+'...'+String(hold_address).slice(-3)}</button>

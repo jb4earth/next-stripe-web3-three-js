@@ -32,13 +32,14 @@ export default async function handler(
             quantity: 1,
           },
         ],
-        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/results?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/donate-with-checkout`,
       }
       const checkoutSession: Stripe.Checkout.Session =
         await stripe.checkout.sessions.create(params)
 
       res.status(200).json(checkoutSession)
+      // console.log(checkoutSession)
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : 'Internal server error'

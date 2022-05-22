@@ -3,7 +3,7 @@ export const reducer = (state, action) => {
     case "toggle_button":
       return {
         ...state,
-        active: !state.active
+        active: state.active
       }
 
     default:

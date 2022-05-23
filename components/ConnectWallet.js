@@ -9,6 +9,7 @@ import {
 import { AddressContext } from "../contexts/Address"
 import React from "react"
 import cookieCutter from 'cookie-cutter'
+import cookies from 'js-cookie'
 // import {store, useGlobalState} from 'state-pool';
 //
 // store.setState("user",{address: '', transaction: '', active:''});
@@ -44,9 +45,10 @@ export const ConnectWallet = () => {
     const disconnectWalletX = () => {
       // state.address = false
       setState({address: false,active:false})
+      
       state.active = false
       state.address = false
-
+      cookies.remove("Current_Address")           
       disconnectWallet()
       console.log(state)
       console.log('ConnectWallet.js disconnect')
@@ -55,6 +57,7 @@ export const ConnectWallet = () => {
     const walletConnected = () => {
       if (state.active === false) {
         setState({address: hold_address, active: true})
+        cookies.set("Current_Address", hold_address)
       // dispatch({address: hold_address})
       // dispatch({active:true})
       state.address = hold_address
@@ -72,7 +75,7 @@ export const ConnectWallet = () => {
   // If a wallet is connected, show address, chainId and disconnect button
   if (hold_address) {
     walletConnected()
-    cookieCutter.set('Current_Address', hold_address)
+    
     return (
       <>
         <button className="cw-button" onClick={() =>disconnectWalletX()}>{String(hold_address).slice(0,5)+'...'+String(hold_address).slice(-3)}</button>

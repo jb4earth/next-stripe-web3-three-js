@@ -21,8 +21,6 @@ import {
 } from '@thirdweb-dev/react';
 
 
-
-
 const addPurchasex = async (address) => {
       // alert(String(address))
       

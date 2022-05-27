@@ -9,14 +9,19 @@ import { useAddress } from '@thirdweb-dev/react'
 import { useRouter } from 'next/router'
 import { fetchGetJSON } from '../utils/api-helpers'
 import useSWR from 'swr'
+
+import CookesConsent from '../components/Consent'
+import CookiesModal from '../components/CookiesModal'
 const DonatePage: NextPage = () => {
 
   return (
     <Layout title="ArchiDAO">
       <div className="nft-container">
+      
         <Cart>
           <Products />
-          <CartSummary />
+          
+          <CartSummary />   
         </Cart>
       </div>
     </Layout>

@@ -16,6 +16,7 @@ const IndexPage: NextPage = () => {
       </ul>
     </Layout>
   )
+  
 }
 
 export default IndexPage

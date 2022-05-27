@@ -35,11 +35,14 @@ import React from 'react';
 
 export default async function handler(req,res) {
   const cookies = new Cookies(req,res);
+  
 
 
   const sessionId: string = req.query.session_id as string
   const address = cookies.get('Current_Address');
   console.log(address)
+  
+  
 
   
   

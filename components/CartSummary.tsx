@@ -40,7 +40,7 @@ const CartSummary = () => {
     setErrorMessage('')
 
     console.log(state.address)
-    console.log('got hrere')
+    
 
 
     const response = await fetchPostJSON(

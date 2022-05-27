@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { ReactNode,useContext } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -8,7 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {  } from '@fortawesome/fontawesome-free-solid'
 import { ConnectWallet } from '../components/ConnectWallet';
 import { AddressContext } from "../contexts/Address"
-
+import CookiesModal from '../components/CookiesModal'
+import CookieConsent from 'react-cookie-consent';
 
 
 library.add(faTwitter,faDiscord,faGithub);
@@ -59,6 +61,7 @@ const Layout = ({
         </div>
 
       </header>
+      
       {children}
     </div>
 
@@ -81,9 +84,9 @@ const Layout = ({
            GitHub&nbsp;<FontAwesomeIcon icon={["fab", "github"]} />
          </a>.
       </span>
-
     </div>
-  </>
+<CookiesModal/>
+   </>
 )
 
 export default Layout

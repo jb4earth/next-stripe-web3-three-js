@@ -806,7 +806,7 @@
     .PrivacyPolicy
     {
       margin-left:6%!important;
-      margin-top: 1rem!important;
+      margin-top: 1.2rem!important;
     }
     .divBtnCookie
     {
@@ -835,6 +835,12 @@
     .BtnCookie
     {
       line-height:1rem!important;
+      top: 18px !important;
+
+    }
+    .divBtnCookie
+    {
+      top:18px!important;
     }
     .PrivacyPolicy
     {

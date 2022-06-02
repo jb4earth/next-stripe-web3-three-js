@@ -1,6 +1,5 @@
 import React from 'react'
 import { formatAmountForDisplay } from '../utils/stripe-helpers'
-
 type Props = {
   name: string
   value: number
@@ -11,7 +10,6 @@ type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
 }
-
 const CustomDonationInput = ({
   name,
   value,

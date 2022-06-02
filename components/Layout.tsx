@@ -56,7 +56,6 @@ const Layout = ({
               FAQ
             </a>
           </Link>
-
           <ConnectWallet />
         </div>
 
@@ -67,7 +66,6 @@ const Layout = ({
 
     <div className="banner">
       <span>
-
          <a
            href="https://discord.gg/J9yAMgP3"
            target="_blank"

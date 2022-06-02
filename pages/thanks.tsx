@@ -57,18 +57,12 @@ const IndexPage: NextPage = (req,res) => {
   
   return (
     <Layout title="ArchiDAO">
-      <div>
-            <h1></h1>
-      </div>
-
-    <h1>Thanks for purchasing!</h1>
-    <h2>The ArchiDAO NFT will be distributed in the next 48 hours.</h2>
-    <h3>If the address shown at top right is not correct, please hit us up in Discord!</h3>
-    <h2>Total number of officially purchased NFT<span> - {data?.Total}  </span></h2>
-    
-   <div>
-    
-      </div>
+    <div className='Thanks_holder'>
+      <h1>Thanks for purchasing!</h1>
+      <h2>The ArchiDAO NFT will be distributed in the next 48 hours.</h2>
+      <h3>If the address shown at top right is not correct, please hit us up in Discord!</h3>
+      <h2>Total number of officially purchased NFT<span> - {data?.Total}  </span></h2>    
+    </div>
     </Layout>
   ) }
 

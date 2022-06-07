@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react'
+//@ts-nocheck
+import React, { useState, useEffect, useCallback ,useRouter} from 'react'
 import {
   useNetwork,
   useAddress,
@@ -10,6 +11,10 @@ import { AddressContext } from "../contexts/Address"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useShoppingCart } from 'use-shopping-cart/react'
 import { fetchPostJSON } from '../utils/api-helpers'
+
+
+
+
 const CartSummary = () => {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(true)
@@ -22,7 +27,7 @@ const CartSummary = () => {
           cartDetails,
           redirectToCheckout,
         } = useShoppingCart()
-
+  
   useEffect(() => setCartEmpty(!cartCount), [cartCount])
   // useEffect(() => setResult(!cartCount), [cartCount])
 
@@ -31,6 +36,19 @@ const CartSummary = () => {
   console.log(state.address)
   console.log('cartsumm.jsx')
 
+  const onMintHandler = async () => { 
+    // make a backend server api request to mint an NFT
+
+       await fetch("/api/mintNFT", {
+         method: "POST",
+             headers: {
+                 "content-type": "application/json",                  
+             },     
+              
+             
+         })   
+       
+     }    
 
   const handleCheckout: React.FormEventHandler<HTMLFormElement> = async (
     event
@@ -41,7 +59,7 @@ const CartSummary = () => {
 
     console.log(state.address)
     
-
+     
 
     const response = await fetchPostJSON(
       '/api/checkout_sessions/cart',
@@ -85,14 +103,16 @@ const CartSummary = () => {
           type="submit"
           disabled={false}
         >
-          <s>Check Out (Bank) <FontAwesomeIcon icon={['fab', 'stripe']} /></s>
+          Check Out (Bank) <FontAwesomeIcon icon={['fab', 'stripe']} />
         </button>
         <button
           className="shop-button cart-button cart-button-mid cart-style-background"
-          type="submit"
-          disabled={true }
+          type="button"
+          href='/thanks'
+          disabled={false}
+          onClick={onMintHandler}
         >
-          <s>Check Out (Crypto)</s>
+          <a href='/thanks'>Check Out (Crypto)</a>
         </button>
         <button
           className="shop-button clear-cart-background cart-button cart-button-bot cart-style-background"
@@ -103,8 +123,6 @@ const CartSummary = () => {
           Clear Cart
         </button>
         </div>
-
-
         </div>
       </form>
     )}else{return(<h1>please connect wallet</h1>)}

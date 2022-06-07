@@ -5,11 +5,13 @@ import {
   useNetwork,
   useAddress,
   useDisconnect,
+ 
 } from '@thirdweb-dev/react';
 import { AddressContext } from "../contexts/Address"
-import React from "react"
-
+import React, { useState,useEffect } from "react"
 import cookies from 'js-cookie'
+
+
 
 
 // import {store, useGlobalState} from 'state-pool';
@@ -49,9 +51,10 @@ export const ConnectWallet = () => {
       console.log(state)
       console.log('ConnectWallet.js disconnect')
     }
-const CookiesAccepted = () => {
-
-}
+    // useEffect(() => {
+    //   nftCollection.getAll().then((allNFTs) => setNFTs(allNFTs));
+      
+    // },[]);
     const walletConnected = () => {
  
       if (state.active === false) {
@@ -73,8 +76,10 @@ const CookiesAccepted = () => {
       // console.log('pre-button render')
     }
   // If a wallet is connected, show address, chainId and disconnect button
+
   if (hold_address) {
-    walletConnected()   
+    walletConnected()
+    cookies.set('quantity','4')   
     return (
       <>
         <button className="cw-button" onClick={() =>disconnectWalletX()}>{String(hold_address).slice(0,5)+'...'+String(hold_address).slice(-3)}</button>

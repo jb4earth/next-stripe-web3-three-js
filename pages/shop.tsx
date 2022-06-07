@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import Cart from '../components/Cart'
 import CartSummary from '../components/CartSummary'
 import Products from '../components/Products'
+
 import { AddressContext } from "../contexts/Address"
 import { useAddress } from '@thirdweb-dev/react'
 import { useRouter } from 'next/router'
@@ -19,8 +20,7 @@ const DonatePage: NextPage = () => {
       <div className="nft-container">
       
         <Cart>
-          <Products />
-          
+          <Products />         
           <CartSummary />   
         </Cart>
       </div>

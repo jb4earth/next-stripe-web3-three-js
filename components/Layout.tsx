@@ -24,7 +24,7 @@ const Layout = ({
   title = 'ArchiDAO',
 }: Props) => (
   <>
-  <div className="backdrop"><Canvas3 /></div>
+  <div className="backdrop"><img src='/Bg.jpg' /></div>
 
     <Head>
       <title>{title}</title>
@@ -48,12 +48,13 @@ const Layout = ({
         <div className="header-content">
           <Link href="/">
             <a className="header-logo">
-              <img src="/archidao.png" />
+              <img src="/archidaoYO.png" />
             </a>
           </Link>
           <Link href="/faq">
             <a className="header-logo">
-              FAQ
+            {/* <img className='img-faq' src='FAQ.png'/> */}
+            𝔽𝔸ℚ
             </a>
           </Link>
           <ConnectWallet />
@@ -69,17 +70,19 @@ const Layout = ({
          <a
            href="https://discord.gg/J9yAMgP3"
            target="_blank"
+           color='yellow'
            rel="noopener noreferrer"
          >
-            Discord&nbsp;<FontAwesomeIcon icon={['fab', 'discord']} />
+            𝔻𝕚𝕤𝕔𝕠𝕣𝕕&nbsp;<FontAwesomeIcon icon={['fab', 'discord']} />
          </a>
          &nbsp;&nbsp;
          <a
            href="https://github.com/archiDAO"
            target="_blank"
+           color='yellow'
            rel="noopener noreferrer"
          >
-           GitHub&nbsp;<FontAwesomeIcon icon={["fab", "github"]} />
+           𝔾𝕚𝕥ℍ𝕦𝕓&nbsp;<FontAwesomeIcon icon={["fab", "github"]} />
          </a>.
       </span>
     </div>

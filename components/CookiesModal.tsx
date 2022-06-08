@@ -15,7 +15,7 @@ import CookieConsent, { Cookies } from 'react-cookie-consent';
             location="bottom"
             buttonText="Sure man!!"
             cookieName="myAwesomeCookieName2"
-            style={{background:'rgb(0 0 0)',color:'white',width:'auto',left:'auto',fontWeight:'600',alignItems:'flex-end',opacity:'0.9'}}
+            style={{background:'rgb(0 0 0)',borderColor:'yellow',color:'yellow',width:'auto',left:'auto',fontWeight:'600',alignItems:'flex-end',opacity:'0.9'}}
             buttonStyle={{background:'white',color:'black'}}
             buttonClasses='BtnCookie'
             buttonWrapperClasses='divBtnCookie'

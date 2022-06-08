@@ -4,7 +4,7 @@
     import fs from "fs";
     import Cookies from 'cookies'
     import { Router, useRouter } from "next/router";
-import { useEffect } from "react";
+    import { useEffect } from "react";
     const PRIVATE_KEY = process.env.WALLET_PRIVATE_KEY 
     const MODULE_ADDRESS = process.env.NEXT_PUBLIC_NFT_COLLECTION_ADDRESS
     // Make sure to initialize environment variables above the start of the api function
@@ -48,12 +48,9 @@ import { useEffect } from "react";
             console.log('success')
             console.log(address)
             console.log(Quantity)
-          
-                 
-                
+               
            res.redirect('/thanks').end()
-           
-            
+                  
             
         } catch (error){
             console.log(error)

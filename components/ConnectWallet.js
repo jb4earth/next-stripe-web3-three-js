@@ -79,7 +79,7 @@ export const ConnectWallet = () => {
 
   if (hold_address) {
     walletConnected()
-    cookies.set('quantity','4')   
+    
     return (
       <>
         <button className="cw-button" onClick={() =>disconnectWalletX()}>{String(hold_address).slice(0,5)+'...'+String(hold_address).slice(-3)}</button>
@@ -91,11 +91,11 @@ export const ConnectWallet = () => {
   return (
     <>
       <button id='CBWallet' className="cw-button" onClick={() => connectWithCoinbaseWallet()}>
-        Coinbase Wallet
+      <img src='/Coinbase.png'/>
       </button>
-      <button className="cw-button" onClick={() => connectWithMetamask()}>MetaMask</button>
+      <button className="cw-button" onClick={() => connectWithMetamask()}><img src='Metamask.png'/></button>
       <button className="cw-button" onClick={() => connectWithWalletConnect()}>
-        WalletConnect
+      <img src='wallet.png'/>
       </button>
     </>
   );

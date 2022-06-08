@@ -93,9 +93,9 @@ export const ConnectWallet = () => {
       <button id='CBWallet' className="cw-button" onClick={() => connectWithCoinbaseWallet()}>
       <img src='/Coinbase.png'/>
       </button>
-      <button className="cw-button" onClick={() => connectWithMetamask()}><img src='/Metamask.png'/></button>
+      <button className="cw-button" onClick={() => connectWithMetamask()}><img src='/MetaMask.png'/></button>
       <button className="cw-button" onClick={() => connectWithWalletConnect()}>
-      <img src='/wallet.png'/>
+      <img src='/Wallet.png'/>
       </button>
     </>
   );

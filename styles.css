@@ -73,13 +73,11 @@
   font-family: 'Major Mono Display', monospace;
   font-size: min(2vw,20px);
   }
-  .whitelist-discription
-  {
-    color: yellow;
-  }
+
   .whiteDescription
   {
     color:yellow!important;
+    margin-top: 5rem;
   }
   .faq-item{
     display: block;
@@ -587,10 +585,15 @@
   }
   .landing
   {
-    background: #00000090;
+    background:black;
     border-style: solid;
     border-radius: 10px;
+    opacity: 0.9rem;
     border-width: 1.25px;
+    margin-top:-3rem!important;
+    right:0;
+    left:0;
+    position:absolute;
     border-color: #909090;
     color: white!important;
     width: 100%;
@@ -917,18 +920,16 @@
       margin-left:21%!important;
     }
   }
-  /* @media only screen and(max-width:480px)
-  {
-    .PrivacyPolicy
-    {
-      margin-left:25%!important;
-    }
-  } */
+  
   @media only screen and (max-width: 480px) {
     .PrivacyPolicy
     {
       margin-left:6%!important;
       margin-top:1.2rem!important;
+    }
+    video
+    {
+      margin-top:9rem;
     }
     .divBtnCookie
     {

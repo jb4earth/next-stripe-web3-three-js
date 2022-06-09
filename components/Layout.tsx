@@ -31,8 +31,8 @@ const Layout = ({
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@ArchiDAO" />
-      <meta name="twitter:title" content="ArchiDAO" />
+      <meta name="twitter:site" content="@NovaDAO" />
+      <meta name="twitter:title" content="NovaDAO" />
       <meta
         name="twitter:description"
         content="The DAO for Architecture"
@@ -48,7 +48,7 @@ const Layout = ({
         <div className="header-content">
           <Link href="/">
             <a className="header-logo">
-              <img src="/NovaDAO.png" />
+              <img src="/NovaDao.png" />
             </a>
           </Link>
           <Link href="/faq">

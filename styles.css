@@ -77,7 +77,7 @@
   .whiteDescription
   {
     color:yellow!important;
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
   .faq-item{
     display: block;
@@ -298,7 +298,7 @@
 
   .header-logo img {
     
-    height: 9rem;
+    height: 5rem;
   }
   video
   {
@@ -576,6 +576,20 @@
     align-items: center;
 
     /* margin: 60px; */
+  }
+  .novaText
+  {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left:auto;
+    margin-top:-2rem;
+  }
+  .textContent
+  {
+    margin-top:2rem;
+    text-align:center;
   }
   .img-faq
   {

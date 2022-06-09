@@ -16,7 +16,7 @@ import CookiesModal from '../components/CookiesModal'
 const DonatePage: NextPage = () => {
 
   return (
-    <Layout title="ArchiDAO">
+    <Layout title="NovaDAO">
       <div className="nft-container">
       
         <Cart>

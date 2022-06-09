@@ -54,7 +54,7 @@
     // Send the form data to our forms API on Vercel and get a response.
   }
   if (address) {  return (
-      <Layout title="ArchiDAO">
+      <Layout title="NovaDAO">
       <div className="whitelist-div">
       <form className="whitelist-form" onSubmit={handleSubmit}>
         <input type="text" className="whitelist-input" id="email" placeholder="email" name="email" value={values.email} onChange={handleEmailInputChange} required />
@@ -67,17 +67,17 @@
     <img src='/differentiation.png'/>
     As far as we know no other DAO focused on architectural research exists. There are some architectural themed DAOs, but mostly they focus on development and decentralized real estate ownership. We also have a unique starting project, which has potential to attract a lot of people.
     <br/>
-    <img src='/team.png'/>
+    {/* <img src='/team.png'/>
     Jiří Vele (architect, doing PhD at Faculty of architecture, CTU in Prague, topic of his research is: robotic concrete 3D printing)
 
 Šimon Prokop (architect, doing PhD at Faculty of architecture, CTU in Prague, topic of his research is: acoustics )
 
-Theo Dounas (architect, researcher, teacher, developer)
+Theo Dounas (architect, researcher, teacher, developer) */}
   </div>
       </Layout>
     )} else
   {  return (
-      <Layout title="ArchiDAO">
+      <Layout title="NovaDAO">
       <div className="whitelist-div whiteDescription">
         <h1>Please connect wallet to whitelist</h1>
       </div>

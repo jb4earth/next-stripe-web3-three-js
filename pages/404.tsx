@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 
 const IndexPage: NextPage = () => {
   return (
-    <Layout title="ArchiDAO">
+    <Layout title="NovaDAO">
     <br/><br/><br/><br/><br/><br/><br/>
     <h1>404 | NOTHING HERE</h1>
     </Layout>

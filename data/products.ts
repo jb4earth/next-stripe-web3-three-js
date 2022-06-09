@@ -1,12 +1,12 @@
 const product = [
   {
-    name: 'ArchiDAO NFT',
-    description: 'ArchiDAO Wearable',
-    id: 'archida_nft_0000',
+    name: 'NovaDAO NFT',
+    description: 'NovaDAO Wearable',
+    id: 'novida_nft_0000',
     price: 9000,
     image:
-      'https://ipfs.io/ipfs/QmPYAPNFB373TrM9TJN59RDuZgSpUDW9qvqBktaSS4vDEH?filename=nft_.png',
-    attribution: 'Photo by Archidao.io',
+      '/nova_nft.jpg',
+    attribution: 'Photo by Novadao.io',
     currency: 'USD',
   },
 ]

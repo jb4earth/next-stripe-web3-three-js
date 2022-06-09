@@ -21,7 +21,7 @@ type Props = {
 
 const Layout = ({
   children,
-  title = 'ArchiDAO',
+  title = 'NovaDAO',
 }: Props) => (
   <>
   <div className="backdrop"><img src='/Bg.jpg' /></div>
@@ -48,13 +48,13 @@ const Layout = ({
         <div className="header-content">
           <Link href="/">
             <a className="header-logo">
-              <img src="/archidaoYO.png" />
+              <img src="/NovaDAO.png" />
             </a>
           </Link>
           <Link href="/faq">
             <a className="header-logo">
-            {/* <img className='img-faq' src='FAQ.png'/> */}
-            𝔽𝔸ℚ
+            <img className='img-faq' src='FAQ.png'/>
+            {/* 𝔽𝔸ℚ */}
             </a>
           </Link>
           <ConnectWallet />

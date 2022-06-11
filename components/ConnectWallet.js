@@ -4,7 +4,7 @@ import {
   useCoinbaseWallet,
   useNetwork,
   useAddress,
-  useDisconnect,
+  useDisconnect,z
  
 } from '@thirdweb-dev/react';
 import { AddressContext } from "../contexts/Address"
